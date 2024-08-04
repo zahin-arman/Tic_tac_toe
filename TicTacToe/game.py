@@ -99,17 +99,20 @@ if __name__ == '__main__':
           "3.Player vs Computer (Hard)\n")
     gamemode = input("Choose one game mode with (1, 2, 3): ")
 
-    if gamemode == 1:
+    if gamemode == '1':
         x_player = HumanPlayer('X')
         o_player = HumanPlayer('O')
-    elif gamemode == 2:
+        t = TicTacToe()
+        play(t, x_player, o_player)
+    elif gamemode == '2':
         x_player = HumanPlayer('X')
         o_player = RandomComputerPlayer('O')
-    elif gamemode == 3:
+        t = TicTacToe()
+        play(t, x_player, o_player)
+    elif gamemode == '3':
         x_player = HumanPlayer('X')
         o_player = GeniusComputerPlayer('O')
+        t = TicTacToe()
+        play(t, x_player, o_player)
     else:
         print("Please type in (1 or 2 or 3)")
-
-    t = TicTacToe()
-    play(t, x_player, o_player)
